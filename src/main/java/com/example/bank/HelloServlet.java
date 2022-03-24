@@ -19,7 +19,7 @@ public class HelloServlet extends HttpServlet {
     public void init() {
     Konto konto = new Konto("markus", "markus", 40);
     Konto konto1 = new Konto("micki", "micki", 3000000);
-    Konto konto2 = new Konto("otto", "otto", 1);
+    Konto konto2 = new Konto("otto", "otto", 500);
     Konto konto3 = new Konto("timi", "timi", 0);
     Konto konto4 = new Konto("bo", "bo", 455);
 

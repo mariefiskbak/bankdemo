@@ -11,7 +11,17 @@
     <title>Din side</title>
 </head>
 <body>
-<h1>Velkommen, du er nu logget ind på din konto ${sessionScope.konto.navn}</h1>
-<h2>Din saldo er ${sessionScope.konto.saldo}</h2>
+<h1>Velkommen, ${sessionScope.konto.navn}, er nu logget ind på din konto </h1>
+<h2>Din saldo er: ${sessionScope.konto.saldo}</h2>
+
+
+<h2>Her kan du hæve</h2>
+<form action="TransactionServlet">
+    <label for="fname">Angiv beløb</label><br>
+    <input type="number" id="fname" name="beløb" value="0"><br>
+
+    <input type="submit" value="Hæv">
+</form>
+
 </body>
 </html>
