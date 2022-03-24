@@ -26,5 +26,18 @@
     <input type="password" id="pass" name="pass" value="kode"><br><br>
     <input type="submit" value="Login">
 </form>
+
+<br><br><br><br>
+
+<h1>Opet konto</h1>
+<form action="LoginServlet" method="post">
+    <label for="newName">Navn:</label><br>
+    <input type="text" id="newName" name="newName" value="John"><br>
+    <label for="pass1">Angiv kode:</label><br>
+    <input type="password" id="pass1" name="pass" value="kode"><br>
+    <label for="pass2">Gentag kode:</label><br>
+    <input type="password" id="pass2" name="pass" value="kode"><br><br>
+    <input type="submit" value="Opret bruger">
+</form>
 </body>
 </html>

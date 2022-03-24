@@ -38,6 +38,13 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("newName");
 
+        Map<String, Konto> kontoMap = (Map<String, Konto>) getServletContext().getAttribute("konti");
+
+        if(kontoMap.containsKey(name)){
+            request.setAttribute("fejl", "Navnet " + name + " er taget, prøv et andet");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
     }
 }
