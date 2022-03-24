@@ -16,24 +16,24 @@ public class TransactionServlet extends HttpServlet
         Konto konto = (Konto) request.getSession().getAttribute("konto");
 
 
-
         String message = "";
 
-        if(beløb > konto.getSaldo()) {
+        if (beløb > konto.getSaldo())
+        {
             message = "Så mange penge har du ikke";
         }
 
-        if(beløb < 0){
+        if (beløb < 0)
+        {
             message = "Du kan ikke hæve et negativt beløb";
-        }
-
-        else if(beløb < konto.getSaldo()) {
+        } else if (beløb < konto.getSaldo())
+        {
             message = "Du har hævet " + beløb + " kr";
         }
 
         request.setAttribute("message", message);
         konto.withdraw(beløb);
-        request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request, response);
 
 
     }
@@ -41,6 +41,23 @@ public class TransactionServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        int beløb = Integer.parseInt(request.getParameter("beløbet"));
+
+        Konto konto = (Konto) request.getSession().getAttribute("konto");
+
+
+        String message = "";
+
+        if (beløb < 0)
+        {
+            message = "Du kan ikke indsætte et negativit beløb";
+        }
+        konto.deposit(beløb);
+
+        request.setAttribute("message", message);
+
+        request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request, response);
+
 
     }
 }

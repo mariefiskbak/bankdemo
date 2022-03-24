@@ -18,11 +18,24 @@
 
 <h2>Her kan du hæve</h2>
 <form action="TransactionServlet">
-    <label for="fname">Angiv beløb</label><br>
-    <input type="number" id="fname" name="beløb" value="0"><br>
+    <label for="hæv">Angiv beløb</label><br>
+    <input type="number" id="hæv" name="beløb" value="0"><br>
 
     <input type="submit" value="Hæv">
 </form>
+
+<br>
+<br>
+<br>
+
+<h2>Her kan du indsætte</h2>
+<form action="TransactionServlet" method="post">
+    <label for="indsæt">Angiv beløb</label><br>
+    <input type="number" id="indsæt" name="beløbet" value="0"><br>
+
+    <input type="submit" value="Indsæt">
+</form>
+
 
 </body>
 </html>
