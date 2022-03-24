@@ -11,14 +11,28 @@ public class TransactionServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        String beløb = request.getParameter("beløb");
+        int beløb = Integer.parseInt(request.getParameter("beløb"));
 
         Konto konto = (Konto) request.getSession().getAttribute("konto");
 
-        int i = Integer.parseInt(beløb);    // mere læsbar
 
-        konto.withdraw(i);
 
+        String message = "";
+
+        if(beløb > konto.getSaldo()) {
+            message = "Så mange penge har du ikke";
+        }
+
+        if(beløb < 0){
+            message = "Du kan ikke hæve et negativt beløb";
+        }
+
+        else if(beløb < konto.getSaldo()) {
+            message = "Du har hævet " + beløb + " kr";
+        }
+
+        request.setAttribute("message", message);
+        konto.withdraw(beløb);
         request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request,response);
 
 

@@ -13,6 +13,7 @@
 <body>
 <h1>Velkommen, ${sessionScope.konto.navn}, er nu logget ind på din konto </h1>
 <h2>Din saldo er: ${sessionScope.konto.saldo}</h2>
+<h2>${requestScope.message}</h2>
 
 
 <h2>Her kan du hæve</h2>
