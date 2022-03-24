@@ -11,7 +11,7 @@ public class TransactionServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        int beløb = Integer.parseInt(request.getParameter("beløb"));
+        int beløb = Integer.parseInt(request.getParameter("value"));
 
         Konto konto = (Konto) request.getSession().getAttribute("konto");
 
@@ -41,7 +41,7 @@ public class TransactionServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        int beløb = Integer.parseInt(request.getParameter("beløbet"));
+        int beløb = Integer.parseInt(request.getParameter("value"));
 
         Konto konto = (Konto) request.getSession().getAttribute("konto");
 
