@@ -46,5 +46,16 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("fejl", "Navnet " + name + " er taget, prøv et andet");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
+
+        String pass1 = request.getParameter("pass1");
+        String pass2 = request.getParameter("pass2");
+
+        if (!pass1.equals(pass2))
+        {
+            request.setAttribute("fejl", "Kodeordene er ikke ens");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+
+
     }
 }

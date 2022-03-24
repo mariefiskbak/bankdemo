@@ -34,9 +34,9 @@
     <label for="newName">Navn:</label><br>
     <input type="text" id="newName" name="newName" value="John"><br>
     <label for="pass1">Angiv kode:</label><br>
-    <input type="password" id="pass1" name="pass" value="kode"><br>
+    <input type="password" id="pass1" name="pass1" value="kode"><br>
     <label for="pass2">Gentag kode:</label><br>
-    <input type="password" id="pass2" name="pass" value="kode"><br><br>
+    <input type="password" id="pass2" name="pass2" value="kode"><br><br>
     <input type="submit" value="Opret bruger">
 </form>
 </body>
