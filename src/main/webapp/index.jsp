@@ -26,6 +26,5 @@
     <input type="password" id="pass" name="pass" value="kode"><br><br>
     <input type="submit" value="Login">
 </form>
-
 </body>
 </html>
