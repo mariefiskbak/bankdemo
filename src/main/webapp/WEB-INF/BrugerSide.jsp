@@ -15,6 +15,7 @@
 <h2>Din saldo er: ${sessionScope.konto.saldo}</h2>
 <h2>${requestScope.message}</h2>
 
+<a href="LogOutServlet">Log af</a>
 
 <h2>Her kan du hæve</h2>
 <form action="TransactionServlet">

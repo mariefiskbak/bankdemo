@@ -15,7 +15,7 @@ public class TransactionServlet extends HttpServlet
 
         Konto konto = (Konto) request.getSession().getAttribute("konto");
 
-
+//TODO fejlbehandling hvis man er logget ud og prøver at hæve
         String message = "";
 
         if (beløb > konto.getSaldo())
@@ -52,7 +52,13 @@ public class TransactionServlet extends HttpServlet
         {
             message = "Du kan ikke indsætte et negativit beløb";
         }
-        konto.deposit(beløb);
+
+        try {
+            konto.deposit(beløb);
+        } catch (Exception e) {
+            request.setAttribute("fejl", "Du er logget af, gå til forsiden for at logge ind");
+            request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request, response);
+        }
 
         request.setAttribute("message", message);
 
