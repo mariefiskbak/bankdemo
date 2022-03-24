@@ -56,6 +56,10 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 
+        Konto konto = new Konto(name,pass1,0);
+        kontoMap.put(konto.getNavn(),konto);
+
+        request.getRequestDispatcher("index.jsp").forward(request, response);
 
     }
 }
