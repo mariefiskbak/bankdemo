@@ -37,6 +37,7 @@
     <input type="submit" value="Indsæt">
 </form>
 
+<a href="SkiftPasswordServlet">Skift password</a>
 
 </body>
 </html>
