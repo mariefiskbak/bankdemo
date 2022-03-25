@@ -23,6 +23,11 @@ public class Konto {
         return saldo;
     }
 
+    public void setKode(String kode)
+    {
+        this.kode = kode;
+    }
+
     public int deposit(int i) {
         if(i > 0){
         saldo = saldo + i;}

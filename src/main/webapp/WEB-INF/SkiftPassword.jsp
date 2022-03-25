@@ -11,6 +11,7 @@
     <title>Skift Password</title>
 </head>
 <body>
+<h1 style="color: red">${requestScope.fejlSkiftPassword}</h1>
 <form action="SkiftPasswordServlet" method="post">
     <label for="nytPassword1">Nyt password</label><br>
     <input type="password" id="nytPassword1" name="nytPassword1" value=""><br>

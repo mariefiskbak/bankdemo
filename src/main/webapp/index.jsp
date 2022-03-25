@@ -24,7 +24,8 @@
     <input type="text" id="name" name="name" value="otto"><br>
     <label for="pass">Angiv kode:</label><br>
     <input type="password" id="pass" name="pass" value="otto"><br><br>
-    <input type="submit" value="Login"> <!-- TODO:logger otto direkte ind
+    <input type="submit" value="Login"> <!-- TODO:logger otto direkte ind -->
+
 </form>
 
 <br><br><br><br>
