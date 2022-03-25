@@ -14,14 +14,18 @@ public class SletBrugerServlet extends HttpServlet
     {
         Map<String, Konto> kontoMap = (Map<String, Konto>) getServletContext().getAttribute("konti");
 
-        String name1 = request.getParameter("name1");
+        String name1 = request.getParameter("brugernavn");
 
-        if (kontoMap.containsKey("name1"))
+        if (kontoMap.containsKey(name1))
         {
             kontoMap.remove(name1);
         }
+        if (!kontoMap.containsKey(name1)){
+            request.setAttribute("fejlTilIndex", "Konto findes ikke");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
 
-
+        request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 
     @Override

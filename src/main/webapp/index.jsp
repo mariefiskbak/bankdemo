@@ -39,10 +39,11 @@
     <input type="password" id="pass2" name="pass2" value="kode"><br><br>
     <input type="submit" value="Opret bruger">
 </form>
-
+<br>
+<br>
 <form action="SletBrugerServlet">
-    <label for="name1"> Navn;</label>
-    <input type="text" id="name1" name="brugernavn" value=" ">
+    <label for="name1"> Navn;</label><br>
+    <input type="text" id="name1" name="brugernavn"><br>
     <input type="submit" value="Slet bruger">
 
 </form>
