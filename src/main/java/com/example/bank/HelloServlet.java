@@ -23,6 +23,9 @@ public class HelloServlet extends HttpServlet {
     Konto konto3 = new Konto("timi", "timi", 0);
     Konto konto4 = new Konto("bo", "bo", 455);
 
+    //TODO give mulighed for at skifte
+        //TODO gemme transaktioner i liste
+
     kontoMap.put(konto.getNavn(), konto);
     kontoMap.put(konto1.getNavn(), konto1);
     kontoMap.put(konto2.getNavn(), konto2);

@@ -35,6 +35,9 @@ public class LoginServlet extends HttpServlet {
 
 
     }
+    //TODO nedlæg konto
+    //TODO fælleskonto
+    //TODO stille krav til passwordet
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -8,6 +8,7 @@ import java.io.IOException;
 @WebServlet(name = "TransactionServlet", value = "/TransactionServlet")
 public class TransactionServlet extends HttpServlet
 {
+    //TODO overføre mellem konti
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
@@ -58,7 +59,7 @@ public class TransactionServlet extends HttpServlet
         } catch (Exception e) {
             request.setAttribute("fejl", "Du er logget af, gå til forsiden for at logge ind");
             request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request, response);
-        }
+        } //TODO fejlhåndteringen virker ikke
 
         request.setAttribute("message", message);
 
