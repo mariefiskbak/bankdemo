@@ -11,7 +11,7 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 
-<h1>Kontiliste</h1>
+<h1>Kontoliste</h1>
 <c:forEach items="${applicationScope.konti}" var="element">
     ${element.value.navn}: ${element.value.saldo} <br>
 
@@ -41,9 +41,10 @@
 </form>
 <br>
 <br>
+<h1>Slet bruger</h1>
 <form action="SletBrugerServlet">
     <label for="name1"> Navn;</label><br>
-    <input type="text" id="name1" name="brugernavn"><br>
+    <input type="text" id="name1" name="brugernavn"><br><br>
     <input type="submit" value="Slet bruger">
 
 </form>
