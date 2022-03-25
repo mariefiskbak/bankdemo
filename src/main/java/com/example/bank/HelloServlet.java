@@ -32,6 +32,7 @@ public class HelloServlet extends HttpServlet {
     kontoMap.put(konto3.getNavn(), konto3);
     kontoMap.put(konto4.getNavn(), konto4);
 
+
         ServletContext servletContext = getServletContext();
         servletContext.setAttribute("konti", kontoMap);
 

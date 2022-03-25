@@ -39,5 +39,13 @@
     <input type="password" id="pass2" name="pass2" value="kode"><br><br>
     <input type="submit" value="Opret bruger">
 </form>
+
+<form action="SletBrugerServlet">
+    <label for="name1"> Navn;</label>
+    <input type="text" id="name1" name="brugernavn" value=" ">
+    <input type="submit" value="Slet bruger">
+
+</form>
+
 </body>
 </html>

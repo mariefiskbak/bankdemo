@@ -16,7 +16,7 @@ public class TransactionServlet extends HttpServlet
 
         Konto konto = (Konto) request.getSession().getAttribute("konto");
 
-//TODO fejlbehandling hvis man er logget ud og prøver at hæve
+
         String message = "";
 
         try {
