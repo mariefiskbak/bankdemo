@@ -35,9 +35,8 @@ public class LoginServlet extends HttpServlet {
 
 
     }
-    //TODO nedlæg konto
+
     //TODO fælleskonto
-    //TODO stille krav til passwordet
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,6 +51,11 @@ public class LoginServlet extends HttpServlet {
 
         String pass1 = request.getParameter("pass1");
         String pass2 = request.getParameter("pass2");
+
+        if ((pass1.length() < 3)){
+            request.setAttribute("fejlTilIndex", "Kodeordene er ikke lang nok");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
 
         if (!pass1.equals(pass2))
         {

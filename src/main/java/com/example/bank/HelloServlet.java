@@ -23,7 +23,7 @@ public class HelloServlet extends HttpServlet {
     Konto konto3 = new Konto("timi", "timi", 0);
     Konto konto4 = new Konto("bo", "bo", 455);
 
-    //TODO give mulighed for at skifte
+    //TODO give mulighed for at skifte password
         //TODO gemme transaktioner i liste
 
     kontoMap.put(konto.getNavn(), konto);
@@ -31,7 +31,7 @@ public class HelloServlet extends HttpServlet {
     kontoMap.put(konto2.getNavn(), konto2);
     kontoMap.put(konto3.getNavn(), konto3);
     kontoMap.put(konto4.getNavn(), konto4);
-
+    
 
         ServletContext servletContext = getServletContext();
         servletContext.setAttribute("konti", kontoMap);

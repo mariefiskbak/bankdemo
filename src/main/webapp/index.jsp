@@ -18,7 +18,7 @@
 </c:forEach>
 <h1>Her kan du logge ind på din konto</h1>
 
-<h1>${requestScope.fejlTilIndex }</h1>
+<h1 style="color: red">${requestScope.fejlTilIndex }</h1>
 <form action="LoginServlet">
     <label for="name">Navn:</label><br>
     <input type="text" id="name" name="name" value="John"><br>
@@ -30,6 +30,7 @@
 <br><br><br><br>
 
 <h1>Opet konto</h1>
+<h3>Password skal indeholde min. 4 char.</h3>
 <form action="LoginServlet" method="post">
     <label for="newName">Navn:</label><br>
     <input type="text" id="newName" name="newName" value="John"><br>
@@ -42,7 +43,7 @@
 <br>
 <br>
 <h1>Slet bruger</h1>
-<form action="SletBrugerServlet">
+<form style="color: red" action="SletBrugerServlet">
     <label for="name1"> Navn:</label><br>
     <input type="text" id="name1" name="brugernavn"><br><br>
     <input type="submit" value="Slet bruger">
