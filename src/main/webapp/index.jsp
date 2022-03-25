@@ -18,7 +18,7 @@
 </c:forEach>
 <h1>Her kan du logge ind på din konto</h1>
 
-<h1>${requestScope.fejl }</h1>
+<h1>${requestScope.fejlTilIndex }</h1>
 <form action="LoginServlet">
     <label for="name">Navn:</label><br>
     <input type="text" id="name" name="name" value="John"><br>

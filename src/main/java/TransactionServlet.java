@@ -19,20 +19,25 @@ public class TransactionServlet extends HttpServlet
 //TODO fejlbehandling hvis man er logget ud og prøver at hæve
         String message = "";
 
-        if (beløb > konto.getSaldo())
-        {
-            message = "Så mange penge har du ikke";
+        try {
+            if (beløb > konto.getSaldo())
+            {
+                message = "Så mange penge har du ikke";
+            }
+
+            if (beløb < 0)
+            {
+                message = "Du kan ikke hæve et negativt beløb";
+            } else if (beløb < konto.getSaldo())
+            {
+                message = "Du har hævet " + beløb + " kr";
+            }
+        } catch (Exception e) {
+            request.setAttribute("fejlTilIndex", "Du er logget af, log ind for at hæve");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 
-        if (beløb < 0)
-        {
-            message = "Du kan ikke hæve et negativt beløb";
-        } else if (beløb < konto.getSaldo())
-        {
-            message = "Du har hævet " + beløb + " kr";
-        }
-
-        request.setAttribute("message", message);
+        request.setAttribute("messageTilBrugerside", message);
         konto.withdraw(beløb);
         request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request, response);
 
@@ -57,12 +62,12 @@ public class TransactionServlet extends HttpServlet
         try {
             konto.deposit(beløb);
         } catch (Exception e) {
-            request.setAttribute("fejl", "Du er logget af, log ind for at hæve eller indsætte");
+            request.setAttribute("fejlTilIndex", "Du er logget af, log ind for at hæve eller indsætte");
             request.getRequestDispatcher("index.jsp").forward(request, response);
-        } //TODO fejlhåndteringen virker nu og dirigerer os om til indexsiden. "fejl" er åbenabrt til indexsiden og "message" til brugersiden
+        }
 
 
-        request.setAttribute("message", message);
+        request.setAttribute("messageTilBrugerside", message);
 
         request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request, response);
 

@@ -19,11 +19,11 @@ public class LoginServlet extends HttpServlet {
         Konto konto = kontoMap.getOrDefault(navn, null);
 
         if(konto == null) {
-            request.setAttribute("fejl", "kontoen fandtes ikke");
+            request.setAttribute("fejlTilIndex", "kontoen fandtes ikke");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
         if(!konto.getKode().equals(kode)){
-            request.setAttribute("fejl", "Den angivne kode er forkert");
+            request.setAttribute("fejlTilIndex", "Den angivne kode er forkert");
             request.getRequestDispatcher("index.jsp").forward(request, response);
 
         }
@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
         Map<String, Konto> kontoMap = (Map<String, Konto>) getServletContext().getAttribute("konti");
 
         if(kontoMap.containsKey(name)){
-            request.setAttribute("fejl", "Navnet " + name + " er taget, prøv et andet");
+            request.setAttribute("fejlTilIndex", "Navnet " + name + " er taget, prøv et andet");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 
@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 
         if (!pass1.equals(pass2))
         {
-            request.setAttribute("fejl", "Kodeordene er ikke ens");
+            request.setAttribute("fejlTilIndex", "Kodeordene er ikke ens");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 
