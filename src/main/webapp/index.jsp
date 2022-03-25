@@ -43,7 +43,7 @@
 <br>
 <h1>Slet bruger</h1>
 <form action="SletBrugerServlet">
-    <label for="name1"> Navn;</label><br>
+    <label for="name1"> Navn:</label><br>
     <input type="text" id="name1" name="brugernavn"><br><br>
     <input type="submit" value="Slet bruger">
 
