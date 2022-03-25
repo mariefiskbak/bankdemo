@@ -57,9 +57,10 @@ public class TransactionServlet extends HttpServlet
         try {
             konto.deposit(beløb);
         } catch (Exception e) {
-            request.setAttribute("fejl", "Du er logget af, gå til forsiden for at logge ind");
-            request.getRequestDispatcher("WEB-INF/BrugerSide.jsp").forward(request, response);
-        } //TODO fejlhåndteringen virker ikke
+            request.setAttribute("fejl", "Du er logget af, log ind for at hæve eller indsætte");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } //TODO fejlhåndteringen virker nu og dirigerer os om til indexsiden. "fejl" er åbenabrt til indexsiden og "message" til brugersiden
+
 
         request.setAttribute("message", message);
 
