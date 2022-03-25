@@ -11,10 +11,10 @@
     <title>Skift Password</title>
 </head>
 <body>
-<form action="SkiftPasswordServlet">
+<form action="SkiftPasswordServlet" method="post">
     <label for="nytPassword1">Nyt password</label><br>
     <input type="password" id="nytPassword1" name="nytPassword1" value=""><br>
-    <label for="nytPassword2">Nyt password</label><br>
+    <label for="nytPassword2">Gentag password</label><br>
     <input type="password" id="nytPassword2" name="nytPassword2" value=""><br><br>
     <input type="submit" value="Skift password">
 </form>
